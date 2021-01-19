@@ -1,9 +1,10 @@
-const camelCase = function (data) {
+const camelCase = function (input) {
   let output = "";
-  let input = data;
-
   for (let i = 0; i < input.length; i++) {
     if (input[i] === " ") {
+      // Here if we come across a space we add the next character of our string
+      // in upper case. We also add 1 to our iteration so that we avoid
+      // re-adding that same number.
       output += input[(i + 1)].toUpperCase();
       i++;
     } else {
