@@ -2,17 +2,17 @@ const calculateChange = function (total, cash) {
   let array = []
   // We create two arrays for the denominations: one in number value, the other
   // in string representation
-  let denomNum = [2000, 1000, 500, 200, 100, 25, 10, 5, 1];
-  let denomText = ['twentyDollar', 'tenDollar', 'fiveDollar', 'twoDollar', 'oneDollar', 'quarter', 'dime', 'nickel', 'penny'];
+  let num = [2000, 1000, 500, 200, 100, 25, 10, 5, 1];
+  let text = ['twentyDollar', 'tenDollar', 'fiveDollar', 'twoDollar', 'oneDollar', 'quarter', 'dime', 'nickel', 'penny'];
   let change = (cash % total)
-  for (let i = 0; i < denomNum.length; i++) {
+  for (let i = 0; i < num.length; i++) {
     // This if statement checks if the change divided by the denomination is greater than 0. 
     // e.g For 34$ I have one $20, so it would be true.
-    if ((((change - (change % denomNum[i])) / denomNum[i])) > 0) {
-      // Here we bring in the denomText so I push in e.g array ['twoDollar',
+    if ((((change - (change % num[i])) / num[i])) > 0) {
+      // Here we bring in the text so I push in e.g array ['twoDollar',
       // (how many)]. Later on I take away the number of denominations away from my change to continue my loop.
-      array.push([denomText[i], (change - (change % denomNum[i])) / denomNum[i]]);
-      change -= denomNum[i] * (change - (change % denomNum[i])) / denomNum[i];
+      array.push([text[i], (change - (change % num[i])) / num[i]]);
+      change -= num[i] * (change - (change % num[i])) / num[i];
     }
   }
   // From my array of multiple arrays with only two elements inside: I create an
