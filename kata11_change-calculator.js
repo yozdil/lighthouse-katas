@@ -1,10 +1,9 @@
 const calculateChange = function (total, cash) {
-  let array = []
+  let array = [], change = (cash % total);
   // We create two arrays for the denominations: one in number value, the other
   // in string representation
   let num = [2000, 1000, 500, 200, 100, 25, 10, 5, 1];
   let text = ['twentyDollar', 'tenDollar', 'fiveDollar', 'twoDollar', 'oneDollar', 'quarter', 'dime', 'nickel', 'penny'];
-  let change = (cash % total)
   for (let i = 0; i < num.length; i++) {
     // This if statement checks if the change divided by the denomination is greater than 0. 
     // e.g For 34$ I have one $20, so it would be true.
