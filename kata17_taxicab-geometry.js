@@ -10,14 +10,14 @@ const blocksAway = function (directions) {
       amount.push(directions[i])
     }
   }
-  console.log(direction);
-  console.log(amount);
+  // console.log(direction);
+  // console.log(amount);
 
   let arr = [1, 1];
   let dir = ['east', 'north'];
-  // if (direction[0]==='left') {
-  //   dir.reverse();
-  // }
+  if (direction[0]==='left') {
+    dir.reverse();
+  }
 
   for (let i = 0; i < direction.length; i++) {
     if (direction[i] === "right") {
@@ -25,18 +25,18 @@ const blocksAway = function (directions) {
       if (direction[i + 1] === "right") {
         arr[1] *= -1;
       }
-    } else if (direction[i] === "left") {
+    } else {
       output[dir[0]] += amount[i] * arr[0];
       if (direction[i + 1] === "left") {
         arr[1] *= -1;
       }
-      arr.reverse();
-      dir.reverse()
     }
+    arr.reverse();
+    dir.reverse()
+  }
+  return output;
+};
 
-    return output;
-  };
-
-  console.log(blocksAway(["right", 2, "right", 3, "right", 1]));
-  // console.log(blocksAway(["left", 1, "right", 1, "left", 1, "right", 1, "left", 1, "right", 1]));
-  // console.log(blocksAway(["left", 3, "right", 1, "right", 3, "right", 1]));
+console.log(blocksAway(["right", 2, "left", 3, "left", 1]));
+console.log(blocksAway(["left", 1, "left", 1, "right", 1, "right", 1, "right", 1, "left", 1]));
+console.log(blocksAway(["left", 3, "right", 1, "right", 3, "right", 1]));
