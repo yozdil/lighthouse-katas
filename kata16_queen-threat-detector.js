@@ -1,7 +1,8 @@
 let whiteQueen = [0, 5];
 let blackQueen = [5, 0];
 const generateBoard = function (whiteQueen, blackQueen) {
-  let board = [ //This is our empty board
+  let board = [
+    //This is our empty board
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
@@ -9,8 +10,8 @@ const generateBoard = function (whiteQueen, blackQueen) {
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0]
-  ]
+    [0, 0, 0, 0, 0, 0, 0, 0],
+  ];
   // Here on we run two different loops one for the black the other for the white queen.
   for (let i = 0; i < board.length; i++) {
     if (whiteQueen[0] === i) {
@@ -23,12 +24,15 @@ const generateBoard = function (whiteQueen, blackQueen) {
     }
   }
   return board;
-}
+};
 
 const queenThreat = function (generatedBoard) {
   // First thing to verify is to check if the queens can attack each othe on the
   // diagonal. if abs(whiteRow – blackRow) = abs(whiteColumn – blackColumn) then it will be true.
-  if (Math.abs(whiteQueen[0] - blackQueen[0]) === Math.abs(whiteQueen[1] - blackQueen[1])) {
+  if (
+    Math.abs(whiteQueen[0] - blackQueen[0]) ===
+    Math.abs(whiteQueen[1] - blackQueen[1])
+  ) {
     return true;
   } else {
     // This part will check if they can attack each other on the same row or column.
@@ -57,7 +61,7 @@ const queenThreat = function (generatedBoard) {
       }
     }
   }
-}
+};
 
 let generatedBoard = generateBoard(whiteQueen, blackQueen);
 console.log(generatedBoard);
