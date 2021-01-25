@@ -1,4 +1,4 @@
-const sumLargestNumbers = (arr) =>
+const sumLargestNumbers = arr =>
   arr
   // To compare numbers instead of strings, the compare function can subtract b
   // from a. The following function will sort the array in ascending order (if
