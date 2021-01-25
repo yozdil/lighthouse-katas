@@ -1,18 +1,18 @@
-const sumLargestNumbers = function(data) {
-  let largestNum = 0, secondLargestNum = 0;
-  // This loop gives us the largest number inside of a given array
-    for (i=0; i<data.length; i++){
-      if (data[i]>largestNum) {
-        largestNum = data[i];}}
-  // We create a new array taking out the lasrgest number 
-  data.splice(data.indexOf(largestNum),1);
-  // We run another loop to find the second largest number
-    for (j=0; j<data.length; j++){
-      if (data[j]>secondLargestNum) {
-        secondLargestNum = data[j];}}
-  // We now add the 1st and the 2nd lasrgest numbers in that array and return it back to us
-  return largestNum + secondLargestNum;        
-};
+const sumLargestNumbers = (arr) =>
+  arr
+  // To compare numbers instead of strings, the compare function can subtract b
+  // from a. The following function will sort the array in ascending order (if
+  // it doesn't contain Infinity and NaN):
+    .sort((a, b) => {
+      return a - b;
+    })
+    // The slice() method returns a shallow copy of a portion of an array.
+    // Negatvie number takes the last two values in that array.
+    .slice(-2)
+    // Reduce iterates through the array and returns a single value.
+    .reduce((a, b) => {
+      return a + b;
+    });
 
 console.log(sumLargestNumbers([1, 10])); //11
 console.log(sumLargestNumbers([1, 2, 3])); //5
