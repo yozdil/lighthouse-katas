@@ -1,8 +1,8 @@
-const numberOfVowels = function (data) {
+const numberOfVowels = (data) => {
   let sum = 0;
   for (let i of data) {
     // As we iterate through the array (our word in this case) if it's a vowel sum goes 1 up.
-    if (i === 'a' || i === 'e' || i === 'i' || i === 'o' || i === 'u') {
+    if (i === "a" || i === "e" || i === "i" || i === "o" || i === "u") {
       sum++;
     }
   }
